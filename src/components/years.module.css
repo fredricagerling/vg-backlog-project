@@ -1,0 +1,11 @@
+.year-nav {
+  color: white;
+  display: flex;
+  justify-content:  center;
+  width: 100%;
+}
+
+.year-nav li {
+  list-style: none;
+  margin: 1rem;
+}
