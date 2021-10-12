@@ -1,8 +1,10 @@
+import styles from "./header.module.css";
+
 const Header = () => {
   return (
-    <div className="header">
-      <nav>
-        <ul>
+    <div className={styles["main-header"]}>
+      <nav className={styles.navbar}>
+        <ul className={styles["navbar-item-list"]}>
           <li>Home</li>
           <li>Hej</li>
         </ul>
