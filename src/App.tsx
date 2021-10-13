@@ -1,15 +1,13 @@
-import Header from "./components/header";
-import Content from "./components/content";
 import React from "react";
-import Years from "./components/years";
+import { BrowserRouter as Router } from "react-router-dom";
+import Navbar from "./components/Navbar";
+import "./App.css";
 
 const App = () => {
   return (
-    <React.Fragment>
-      <Header />
-      <Years />
-      <Content />
-    </React.Fragment>
+    <Router>
+      <Navbar />
+    </Router>
   );
 };
 
