@@ -1,0 +1,24 @@
+.burger div {
+  width: 2rem;
+  height: 4px;
+  background-color: white;
+  margin: 5px;
+  border-radius: 6px;
+  transition: all 0.3s ease;
+}
+
+.burger {
+  margin-left: auto;
+  /* display: none; */
+}
+
+
+.line1 {
+  transform: rotate(-225deg) translate(6px, -6px);
+}
+.line2 {
+  opacity: 0;
+}
+.line3 {
+  transform: rotate(225deg) translate(6px, 6px);
+}

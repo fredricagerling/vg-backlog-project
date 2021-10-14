@@ -1,0 +1,17 @@
+.dropdown-menu {
+  width: 100%;
+  list-style: none;
+  text-align: center;
+  background-color: rgb(14, 37, 37);
+  height: 8rem;
+  display: flex;
+  justify-content: center;
+  transition: all 0.3s ease;
+  align-items: center;
+}
+
+.dropdown-menu li {
+  list-style: none;
+  color: white;
+  margin-bottom: 8px;
+}
