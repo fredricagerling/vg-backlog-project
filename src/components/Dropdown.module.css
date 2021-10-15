@@ -3,14 +3,13 @@
   list-style: none;
   text-align: center;
   background-color: rgb(14, 37, 37);
-  height: 8rem;
   display: flex;
   justify-content: center;
   transition: all 0.4s ease;
   align-items: center;
-  position:absolute;
+  position: static;
   z-index: 0;
-  border-bottom: solid 1px white;
+  height: 8rem;
 }
 
 .open {
@@ -18,11 +17,24 @@
 }
 
 .closed {
-  transform: translate(0, -7.90rem);
+  transform: translate(0, -8rem);
+  height: 0;
 }
 
 .dropdown li {
   list-style: none;
   color: white;
   margin-bottom: 8px;
+}
+
+.dropdown li:hover {
+  cursor: pointer;
+  color: rgb(141, 137, 180);
+}
+
+@media screen and (min-width: 600px) {
+  .dropdown {
+    transform: translate(0, -8rem);
+    height: 0;
+  }
 }

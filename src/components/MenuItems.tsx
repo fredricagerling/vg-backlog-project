@@ -1,22 +1,18 @@
 export const MenuItems = [
   {
-    title: "2010",
-    path: "/finished-2010",
+    title: "Finished",
+    path: "/finished",
     cName: "dropdown-link",
   },
   {
-    title: "2011",
-    path: "/finished-2011",
+    title: "Backlog",
+    path: "/backlog",
     cName: "dropdown-link",
   },
   {
-    title: "2012",
-    path: "/finished-2012",
+    title: "Wishlist",
+    path: "/wishlist",
     cName: "dropdown-link",
-  },
-  {
-    title: "2013",
-    path: "/finished-2013",
-    cName: "dropdown-link",
-  },
+  }
+  
 ];

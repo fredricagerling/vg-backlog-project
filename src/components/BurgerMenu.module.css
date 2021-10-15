@@ -7,11 +7,13 @@
   transition: all 0.3s ease;
 }
 
-.burger {
-  margin-left: auto;
-  /* display: none; */
+.burger:hover{
+  cursor: pointer;
 }
 
+.burger {
+  margin-left: auto;
+}
 
 .line1 {
   transform: rotate(-225deg) translate(6px, -6px);
@@ -21,4 +23,10 @@
 }
 .line3 {
   transform: rotate(225deg) translate(6px, 6px);
+}
+
+@media screen and (min-width: 600px) {
+  .burger {
+    display: none;
+  }
 }

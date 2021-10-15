@@ -1,7 +1,6 @@
-import React, { useState } from "react";
-import { Link } from "react-router-dom";
-import { MenuItems } from "./MenuItems";
+import React from "react";
 import styles from "./Dropdown.module.css";
+import { MenuItems } from "./MenuItems";
 
 const Dropdown: React.FC<{ onShow: boolean }> = (props) => {
   const dropdown = props.onShow
@@ -11,10 +10,9 @@ const Dropdown: React.FC<{ onShow: boolean }> = (props) => {
   return (
     <div className={dropdown}>
       <ul>
-        <li>hello1</li>
-        <li>hello2</li>
-        <li>hello3</li>
-        <li>hello4</li>
+        {MenuItems.map((item, index) => {
+          return <li key={index}>{item.title}</li>;
+        })}
       </ul>
     </div>
   );

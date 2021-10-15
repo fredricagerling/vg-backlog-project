@@ -1,0 +1,37 @@
+.navbar {
+  background-color: rgb(14, 37, 37);
+  height: 5rem;
+  display: flex;
+  align-items: center;
+  padding: 1rem;
+  position: relative;
+  z-index: 999;
+}
+
+.navbar a {
+  color: white;
+  text-decoration: none;
+}
+
+.nav-links {
+  display: flex;
+  color: white;
+  list-style: none;
+  justify-content: flex-end;
+  flex: 1;
+}
+
+.nav-links li {
+  margin: 1rem;
+}
+
+.nav-links li:hover {
+  cursor: pointer;
+  color: rgb(141, 137, 180);
+}
+
+@media screen and (max-width: 600px) {
+  .nav-links {
+    display: none;
+  }
+}
