@@ -1,7 +1,7 @@
 import React, { Fragment, useState } from "react";
 import "./Navbar.css";
 import Dropdown from "./Dropdown";
-
+import Transition from "react-transition-group/Transition";
 import { Link } from "react-router-dom";
 import BurgerMenu from "./BurgerMenu";
 
@@ -20,7 +20,7 @@ const Navbar = () => {
         </Link>
         <BurgerMenu openMenu={toggleMenu} />
       </nav>
-      {showMenu && <Dropdown />}
+      <Dropdown onShow={showMenu} />
     </React.Fragment>
   );
 };
