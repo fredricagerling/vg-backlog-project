@@ -1,9 +1,9 @@
 import React, { Fragment, useState } from "react";
-import styles from "./Navbar.module.css";
+import styles from "../styles/Navbar.module.css";
 import Dropdown from "./Dropdown";
-import { Link } from "react-router-dom";
 import BurgerMenu from "./BurgerMenu";
 import { MenuItems } from "./MenuItems";
+import Link from "next/link";
 
 const Navbar = () => {
   const [showMenu, setShowMenu] = useState(false);
@@ -15,12 +15,18 @@ const Navbar = () => {
   return (
     <Fragment>
       <nav className={styles.navbar}>
-        <Link to="/" className={styles["navbar-logo"]}>
-          Beat the backlog!
+        <Link href="/">
+          <a className={styles["navbar-logo"]}>Beat the backlog!</a>
         </Link>
         <ul className={styles["nav-links"]}>
           {MenuItems.map((item, index) => {
-            return <li key={index}>{item.title}</li>;
+            return (
+              <li key={index}>
+                <Link href={item.path}>
+                  <a>{item.title}</a>
+                </Link>
+              </li>
+            );
           })}
         </ul>
         <BurgerMenu openMenu={toggleMenu} />

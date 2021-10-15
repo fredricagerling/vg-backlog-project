@@ -27,7 +27,7 @@
   margin-bottom: 8px;
 }
 
-.dropdown li:hover {
+.dropdown a:hover {
   cursor: pointer;
   color: rgb(141, 137, 180);
 }

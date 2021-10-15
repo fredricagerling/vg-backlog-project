@@ -1,4 +1,4 @@
-import styles from "./BurgerMenu.module.css";
+import styles from "../styles/BurgerMenu.module.css";
 import React, { useState } from "react";
 
 const BurgerMenu: React.FC<{ openMenu: any }> = (props) => {

@@ -25,8 +25,7 @@
   margin: 1rem;
 }
 
-.nav-links li:hover {
-  cursor: pointer;
+.nav-links a:hover {
   color: rgb(141, 137, 180);
 }
 
