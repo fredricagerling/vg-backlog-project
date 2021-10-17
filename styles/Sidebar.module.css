@@ -1,0 +1,31 @@
+.sidebar {
+  background-color: rgb(22, 22, 22);
+  height: 50rem;
+  width: 10rem;
+  display: flex;
+  overflow: hidden;
+  justify-content: center;
+  position: fixed;
+}
+
+.sidebar ul{
+  margin-top: 1rem;
+}
+
+.sidebar li {
+  list-style: none;
+  padding: 1rem;
+  overflow: hidden;
+}
+
+.sidebar li a {
+  padding: 5rem;
+}
+
+.active {
+  background-color: rgb(39, 39, 39);
+}
+
+.sidebar li:hover{
+  background-color: rgb(39, 39, 39);;
+}

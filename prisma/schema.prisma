@@ -9,3 +9,40 @@ datasource db {
 generator client {
   provider = "prisma-client-js"
 }
+
+model Game {
+  id      Int     @id @default(autoincrement())
+  title   String
+  genre   Genre?  @relation(fields: [genreId], references: [id])
+  genreId Int?
+  entries Entry[]
+  backlog Boolean
+}
+
+model Entry {
+  id           Int      @id @default(autoincrement())
+  game         Game     @relation(fields: [gameId], references: [id])
+  Console      Console? @relation(fields: [consoleId], references: [id])
+  consoleId    Int?
+  finishedYear Year     @relation(fields: [yearId], references: [id])
+  gameId       Int
+  note         String?
+  yearId       Int
+}
+
+model Genre {
+  id    Int    @id @default(autoincrement())
+  name  String
+  games Game[]
+}
+
+model Console {
+  id    Int     @id @default(autoincrement())
+  name  String
+  Entry Entry[]
+}
+
+model Year {
+  id    Int     @id
+  Entry Entry[]
+}
