@@ -1,5 +1,7 @@
-import type { NextPage } from "next";
+import type { GetServerSideProps, NextPage } from "next";
 import Link from "next/link";
+import { getEntries } from "../../utils/entries";
+import { Entry, Game } from "@prisma/client";
 
 const years = [
   "2010",
@@ -16,7 +18,13 @@ const years = [
   "2021",
 ];
 
-const Finished: NextPage = () => {
+function Finished({
+  entries,
+}: {
+  entries: (Entry & {
+    game: Game;
+  })[];
+}) {
   return (
     <>
       <h1>Finished</h1>
@@ -31,6 +39,8 @@ const Finished: NextPage = () => {
       </ul>
     </>
   );
-};
+}
+
+
 
 export default Finished;
