@@ -1,10 +1,9 @@
-import Head from "next/head";
 import React from "react";
-import Layout from "../../components/Layout";
 import { useRouter } from "next/router";
 import { GetServerSideProps } from "next";
 import { getEntries } from "../../utils/entries";
 import { Entry, Game } from "@prisma/client";
+import styles from '../../styles/GameList.module.css';
 
 function Year({
   entries,
@@ -17,7 +16,7 @@ function Year({
   return (
     <>
       <h1>{router.query.year}</h1>
-      <ol>
+      <ol className={styles.ol}>
         {entries.map((item, index) => {
           return <li key={index}>{item.game.title}</li>;
         })}
