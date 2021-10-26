@@ -2,25 +2,40 @@ import React from "react";
 import { useRouter } from "next/router";
 import { GetServerSideProps } from "next";
 import { getEntries } from "../../utils/entries";
-import { Entry, Game } from "@prisma/client";
-import styles from '../../styles/GameList.module.css';
+import { Entry, Game, Console } from "@prisma/client";
+import styles from "../../styles/GameList.module.css";
 
 function Year({
   entries,
 }: {
   entries: (Entry & {
     game: Game;
+    Console: Console | null;
   })[];
 }) {
   const router = useRouter();
   return (
     <>
-      <h1>{router.query.year}</h1>
-      <ol className={styles.ol}>
-        {entries.map((item, index) => {
-          return <li key={index}>{item.game.title}</li>;
-        })}
-      </ol>
+      <div className={styles.gameTable}>
+        <h3>{router.query.year} ({entries.length} st)</h3>
+        <table>
+          <tr>
+            <th>#</th>
+            <th>Title</th>
+            <th>Console</th>
+          </tr>
+
+          {entries.map((item, index) => {
+            return (
+              <tr key={index}>
+                <td>{index + 1}</td>
+                <td>{item.game.title}</td>
+                <td>{item.Console?.name}</td>
+              </tr>
+            );
+          })}
+        </table>
+      </div>
     </>
   );
 }

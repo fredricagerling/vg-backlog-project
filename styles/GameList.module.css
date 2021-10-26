@@ -1,3 +1,29 @@
-.ol {
+.gameTable {
+  display: flex;
+  box-shadow: 0px 0px 10px rgba(114, 114, 113, 0.5);
+  border-radius: 15px;
+  max-width: 800px;
+  margin-right: auto;
+  margin-left: auto;
   padding: 1rem;
+  flex-direction: column;
 }
+
+.gameTable table {
+  width: 100%;
+  overflow: hidden;
+}
+
+.gameTable th {
+  text-align: left;
+  
+  padding: 4px
+}
+.gameTable td {
+  padding: 4px
+}
+
+.gameTable tr:nth-child(even) {
+  background-color: #141414;
+}
+
