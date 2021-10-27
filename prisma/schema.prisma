@@ -17,6 +17,7 @@ model Game {
   genreId Int?
   entries Entry[]
   backlog Boolean
+  image   String?
 }
 
 model Entry {
