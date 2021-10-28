@@ -1,11 +1,13 @@
 .gameCard {
   height: 6rem;
-  background-color: blueviolet;
   margin-bottom: 1rem;
   width: 300px;
   display: flex;
   border-radius: 5px;
   padding: 0.5rem;
+  color: black;
+  border: 1px  solid rgb(158, 158, 158);
+  box-shadow: 1px 1px 1px 1px rgba(0, 0, 0, 0.5);
 }
 
 .info {

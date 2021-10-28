@@ -16,14 +16,24 @@
 
 .gameTable th {
   text-align: left;
-  
-  padding: 4px
+
+  padding: 4px;
 }
 .gameTable td {
-  padding: 4px
+  padding: 4px;
 }
 
 .gameTable tr:nth-child(even) {
   background-color: #141414;
 }
 
+.yearTitle {
+  color: black;
+  margin-bottom: 1rem;
+  text-align: center;
+}
+.cardContainer {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+}

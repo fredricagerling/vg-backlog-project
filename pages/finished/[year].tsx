@@ -4,37 +4,19 @@ import { GetServerSideProps } from "next";
 import { getEntries } from "../../utils/entries";
 import { Entry, Game, Console } from "@prisma/client";
 import styles from "../../styles/GameList.module.css";
+import GameCard, { EntryProp } from "../../components/Gamecard";
 
-function Year({
-  entries,
-}: {
-  entries: (Entry & {
-    game: Game;
-    Console: Console | null;
-  })[];
-}) {
+function Year({ entries, year }: { entries: EntryProp[]; year: string }) {
   const router = useRouter();
   return (
     <>
-      <div className={styles.gameTable}>
-        <h3>{router.query.year} ({entries.length} st)</h3>
-        <table>
-          <tr>
-            <th>#</th>
-            <th>Title</th>
-            <th>Console</th>
-          </tr>
-
-          {entries.map((item, index) => {
-            return (
-              <tr key={index}>
-                <td>{index + 1}</td>
-                <td>{item.game.title}</td>
-                <td>{item.Console?.name}</td>
-              </tr>
-            );
-          })}
-        </table>
+      <h1 className={styles.yearTitle}>
+        {year} ({entries.length} st)
+      </h1>
+      <div className={styles.cardContainer}>
+        {entries.map((item, index) => {
+          return <GameCard key={index} entry={item} />;
+        })}
       </div>
     </>
   );
@@ -50,6 +32,7 @@ export const getServerSideProps: GetServerSideProps = async (context) => {
   return {
     props: {
       entries,
+      year: context.query.year as string,
     },
   };
 };

@@ -1,6 +1,6 @@
 .navbar {
-  background-color: rgb(14, 37, 37);
-  height: 5rem;
+  background-color: rgb(228, 228, 228);
+  height: 4rem;
   display: flex;
   align-items: center;
   padding: 1rem;
@@ -10,13 +10,13 @@
 }
 
 .navbar a {
-  color: white;
+  color: black;
   text-decoration: none;
 }
 
 .nav-links {
   display: flex;
-  color: white;
+  color: black;
   list-style: none;
   justify-content: flex-end;
   flex: 1;
@@ -27,7 +27,17 @@
 }
 
 .nav-links a:hover {
-  color: rgb(141, 137, 180);
+  color: rgb(39, 39, 39);
+}
+
+.yearNav {
+  display: flex;
+  justify-content: space-between;
+  width: 800px;
+}
+
+.yearNav a {
+  color: black;
 }
 
 @media screen and (max-width: 600px) {
