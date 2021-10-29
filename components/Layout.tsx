@@ -1,17 +1,20 @@
 import React, { ReactNode, useState } from "react";
-import styles from '../styles/Layout.module.css';
-import Navbar from './Navbar'
+import styles from "../styles/Layout.module.css";
+import Header from "./Header";
+import Navbar from "./Navbar";
 
 type Props = {
   children: ReactNode;
 };
 
 const Layout: React.FC<Props> = (props) => {
-
   return (
     <>
-      <Navbar />
-      <main className={styles.main}>{props.children}</main>
+      <Header />
+      <div className={styles.layout}>
+        <Navbar />
+        <main>{props.children}</main>
+      </div>
     </>
   );
 };

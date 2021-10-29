@@ -1,9 +1,9 @@
 import React, { Fragment, useState } from "react";
 import styles from "../styles/Navbar.module.css";
-import Dropdown from "./Dropdown";
-import BurgerMenu from "./BurgerMenu";
-import { MenuItems } from "./MenuItems";
 import Link from "next/link";
+import { useRouter } from "next/router";
+import ArrowDropDownIcon from "@mui/icons-material/ArrowDropDown";
+import YearDropDown from "./YearDropDown";
 
 const years = [
   "2010",
@@ -21,41 +21,61 @@ const years = [
 ];
 
 const Navbar = () => {
+  const router = useRouter();
+
   const [showMenu, setShowMenu] = useState(false);
 
-  const toggleMenu = () => {
+  const toggleMenuHandler = () => {
     setShowMenu(!showMenu);
   };
 
   return (
     <Fragment>
       <nav className={styles.navbar}>
-        {/* <Link href="/">
-          <a className={styles["navbar-logo"]}>Beat the backlog!</a>
-        </Link> */}
-        <div className={styles.yearNav}>
-          {years.map((item, index) => {
-            return (
-              <Link key={index} href={`/finished/${item}`}>
-                {item}
-              </Link>
-            );
-          })}
-        </div>
-        {/* <ul className={styles["nav-links"]}>
-          {MenuItems.map((item, index) => {
-            return (
-              <li key={index}>
-                <Link href={item.path}>{item.title}</Link>
-              </li>
-            );
-          })}
-        </ul> */}
-        {/* <BurgerMenu openMenu={toggleMenu} /> */}
+        <ul className={styles["nav-links"]}>
+          <li>
+            <Link href="/backlog">
+              <a className={router.pathname == "/backlog" ? `${styles.active}` : ""}>
+                Backlog
+              </a>
+            </Link>
+          </li>
+          <li className={styles.finished}>
+            <Link href="/finished">
+              <a className={router.pathname.includes("/finished") ? `${styles.active}` : ""}>
+                Finished
+              </a>
+            </Link>
+            <ArrowDropDownIcon onClick={toggleMenuHandler} />
+          </li>
+          {showMenu && <YearDropDown />}
+          <li>
+            <Link href="/wishlist">
+              <a className={router.pathname == "/wishlist" ? `${styles.active}` : ""}>
+                Wishlist
+              </a>
+            </Link>
+          </li>
+        </ul>
       </nav>
-      <Dropdown onShow={showMenu} />
     </Fragment>
   );
 };
 
 export default Navbar;
+
+{
+  /* <nav className={styles.sidebar}>
+        <ul className={styles["nav-links"]}>
+          <div className={styles.yearNav}>
+            {years.map((item, index) => {
+              return (
+                <Link key={index} href={`/finished/${item}`}>
+                  {item}
+                </Link>
+              );
+            })}
+          </div>
+        </ul>
+      </nav> */
+}
